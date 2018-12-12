@@ -1,0 +1,3 @@
+-name mnesia_cache@127.0.0.1
+-setcookie mnesia_cache
+-heart
