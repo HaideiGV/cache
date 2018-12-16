@@ -12,6 +12,8 @@
 -record(data, {key, value, ttl, setup_date}).
 
 start(_Type, _Args) -> 
+	mnesia:create_schema([node()]),
+	mnesia:start(),
 	mnesia_cache_sup:start_link().
 
 stop(_State) ->
@@ -54,8 +56,6 @@ create_data_table() ->
 	end.
 
 init_db() -> 
-	mnesia:create_schema([node()]),
-	mnesia:start(),
 	create_data_table(),
 	load_test_data().
 
