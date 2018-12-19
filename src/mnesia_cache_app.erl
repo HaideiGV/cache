@@ -1,7 +1,16 @@
 -module(mnesia_cache_app).
 -behaviour(application).
 
--export([start/2, stop/1, init_db/0, get/1, set/2, set/3, delete/1]).
+-export([
+	start/2, 
+	stop/1, 
+	init_db/0, 
+	get/1, 
+	set/2, 
+	set/3, 
+	delete/1,
+	get_timestamp/0
+]).
 
 -define(DEFAULT_TTL, 60).
 -define(ZERO_TTL, 0).
